@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Products</title>
+    <!-- Add any additional CSS or JavaScript here -->
+</head>
+<body>
+    <h1>Boba Products List</h1>
+    <div>
+        {% if products %}
+            <ul>
+                {% for product in products %}
+                    <li>
+                        <h2>{{ product.name }}</h2>
+                        <p>Price: {{ product.price }}</p>
+                        <p>Quantity in Stock: {{ product.quantity_in_stock }}</p>
+                        <p>Description: {{ product.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No products available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
